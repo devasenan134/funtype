@@ -12,21 +12,21 @@
 <div class="jumbotron jumbotron-fluid" id="top_container" style="background-color:white; color:black; padding-top:30px; padding-bottom:30px;">
     <div class="container" style="text-align:center;">
         <h2 style="text-decoration:underline;">Your Stats</h2><br>
-        
+
         <div class="row justify-content-start" id="info_row">
             <div class="col-4">
                 <h5 class="display-5" id="wpm">(Gross)WPM: 0</h5>
-            </div>  
+            </div>
             <div class="col-4">
                 <h5 class="display-5" id="time">Time: 0s</h5>
             </div>
             <div class="col">
                 <h5 class="display-5" id="temp1">
-                
+
                 </h5>
             </div>
         </div>
-        
+
         <div class="row justify-content-start" id="info_row">
             <div class="col-4">
                 <h5 class="display-5" id="accuracy">Accuracy: 0.0%</h5>
@@ -36,11 +36,11 @@
             </div>
             <div class="col">
                 <h5 class="display-5" id="temp2">
-            
+
                 </h5>
             </div>
         </div>
-        
+
         <div class="row" id="info_row">
             <div class="col">
                 <button class="btn btn-info" type="button" id="next">Next</button>
@@ -55,7 +55,7 @@
                         <button class="btn btn-info" type="button">Login required!</button>
                     </a>
                 {% endif %}
-                
+
             </div>
             <div class="col">
                 <button class="btn btn-info" type="button" id="try_again">Try Again</button>
@@ -70,18 +70,20 @@
 </div>
 
 
+<div class="container">
+    <div id="alert" role="alert" style=" font-size:larger; margin-top:30px;">
 
-<div id="alert" role="alert" style=" font-size:larger; margin-top:30px;">
-    
+    </div>
+
+    <!--game area-->
+    <div class="container" style="background-color: rgb(240,240,240); width:auto; height:auto; margin-top:30px; margin-left:auto; margin-right:auto; margin-bottom:80px; border-radius: 10px; padding: 40px;">
+
+        <p style="color:black; font-size:25px; margin-bottom:30px; padding:11px;" id="text"></p>
+
+        <textarea class="container" id="text_input" rows="3" style="padding: 10px; resize:none; font-size:25px; border-radius:5px; background-color:rgb(240,240,240);" autocorrect="off" autocapitalize="off" maxlength="0"></textarea>
+
+    </div>
 </div>
 
-
-<!--game area-->
-<div class="container" style="background-color: rgb(240,240,240); width:auto; height:auto; margin-top:30px; margin-left:auto; margin-right:auto; border-radius: 10px; padding: 40px;">
-    <p style="color:black; font-size:25px; margin-bottom:30px; padding:11px;" id="text"></p>
-    
-    <textarea class="container" id="text_input" rows="3" style="padding: 10px; resize:none; font-size:25px; border-radius:5px; background-color:rgb(240,240,240);" autocorrect="off" autocapitalize="off" maxlength="0"></textarea>
-
-</div>
 
 {% endblock %}

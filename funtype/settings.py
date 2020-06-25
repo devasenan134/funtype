@@ -25,7 +25,7 @@ SECRET_KEY = '5r76$#f9^l3im*4d#lq5b05t8#uyby%twjd&&1fpgkl+)=b$@o'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['funtype.pythonanywhere.com']
 
 
 # Application definition
@@ -121,6 +121,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = '/home/funtype/funtype/static'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'

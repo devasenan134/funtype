@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     function quote_api() {
-        return fetch('http://api.quotable.io/random')
+        return fetch('https://api.quotable.io/random')
             .then(response => response.json())
             .then(data => data)
     }
@@ -168,11 +168,11 @@ document.addEventListener('DOMContentLoaded', () => {
     function lasttry(){
 
         l_try1 = true
-        
+
         h5 = document.createElement('h5')
         temp1.appendChild(h5)
         h5.innerHTML = 'Last Try'
-        
+
         th6 = document.createElement('h6')
         th6.style.fontSize = '15px'
         temp1.appendChild(th6)
@@ -184,7 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ah6 = document.createElement('h6')
         ah6.style.fontSize = '15px'
         temp2.appendChild(ah6)
-        
+
     }
 
 
@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             last_time = 0
         }
-        
+
         th6.innerHTML = `Total time: ${last_time}s`
         total_time.innerHTML = `Total time: 0s`
         time = -5
@@ -249,7 +249,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let data = '';
     let time = 0
-    let correct 
+    let correct
     let l_try1 = false
     let l_try2 = false
     let next_btn = false
@@ -307,8 +307,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 setInterval(startTimer, 1000)
             }
         })
-        
-        
+
+
         text_input.addEventListener('keydown', cal_accuracy)
 
         // Main input eventlistener
@@ -338,7 +338,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 setInterval(console.log('count'), 1000)
                 //text_input.disabled = false
                 watch = true
-                }  
+                }
             renderQuote()
         }
 
@@ -349,7 +349,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if(l_try1 === false){
                 lasttry()
             }
-        
+
             if (l_try2 === true) {
                 temp1.style.display = 'block'
                 temp2.style.display = 'block'
@@ -361,7 +361,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             info_alert.className = 'alert alert-danger'
             info_alert.innerHTML = `Click on the textarea when time is 0. And get ready!!`
-            
+
 
             const arrayQuote = text.querySelectorAll('span')
             arrayQuote.forEach((characterSpan, index) => {
@@ -374,9 +374,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 setInterval(console.log('count'), 1000)
                 //text_input.disabled = false
                 watch = true
-            }  
+            }
             //text_input.disabled = false
-            text_input.focus = false    
+            text_input.focus = false
         }
     }
 
