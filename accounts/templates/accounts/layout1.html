@@ -1,0 +1,27 @@
+{% load static %}
+
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+    <title>FunType</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+    <div class="page_top" style="font-family: sans-serif; margin-bottom:0px;">
+        FunType
+    </div>
+    {% block form %}
+
+    {% endblock %}
+
+    <div class="page_bottom">
+        <a href="{% url 'funtype:practice' %}">Home</a> | <a href="{% url 'funtype:about' %}">About</a>
+    </div>
+</body>
+    
+</html>

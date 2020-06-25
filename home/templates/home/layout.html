@@ -1,0 +1,124 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    
+    
+    <style>
+        @media (min-width:900px) {
+            body {
+                background-color:white;
+            }
+        }   
+
+        @media (max-width:899px) {
+            body {
+                background-color:green;
+            }
+
+            h2{
+                font-size: 20px;
+            }
+
+            h5{
+                font-size: 15px;
+            }
+        }
+
+        #info_row{
+            margin:5px;
+        }
+
+
+        .characterSpan {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+    </style>
+    <title>FunType</title>
+
+
+    <!--js for navbar active items-->
+    <script src="{% static 'home/navbar_active.js' %}"></script>
+
+</head>
+<body style="color: white; background-color:black;">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="{% url 'home:home' %}">
+            <img src="{% static 'home/logo1.PNG' %}" alt="logo" style="border-radius: 5px; width: 70px;">
+        </a>
+        <a class="navbar-brand" style="font-weight: bolder; font-family: cursive;" href="{% url 'home:home' %}">FunType</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li id="practice" class="nav-item active">
+                    <a class="nav-link" href="{% url 'home:practice' %}">Practice</a>
+                </li>
+                <li id="friends" class="nav-item">
+                    <a class="nav-link disabled" href="{% url 'home:friends' %}">Friends</a>
+                </li>
+                <li id="online" class="nav-item">
+                    <a class="nav-link disabled" href="{% url 'home:online' %}">Online</a>
+                </li>
+            {% if not user.is_authenticated %}
+                <li id="login" class="nav-item">
+                    <a class="nav-link" href="{% url 'accounts:loginuser'%}">Login</a>
+                </li>
+                <li id="signup" class="nav-item">
+                    <a class="nav-link" href="{% url 'accounts:signupuser'%}">SignUp</a>
+                </li>
+            </ul>
+            {% else %}
+            </ul>
+            <h5 class="mr-sm-2" style="color: white;">Welcome back {{ user.username }}!!</h5>
+            <form class="form-inline my-2 my-lg-0" action="{% url 'accounts:logoutuser' %}" method="POST">
+                {% csrf_token %}
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="margin: 0px 10px 0px 10px;">Logout</button>
+            </form>
+            {% endif %}
+        </div>
+    </nav>
+    
+        {% block body_content %}
+    
+        {% endblock %}
+    
+
+    <footer class="page-footer font-small fixed-bottom">
+    
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3" style="background-color: black; color: white; opacity: 75%;" id="footer" >
+            <a href="https://funtype.pythonanywhere.com/">Home</a> | <a href="https://devasenan134.pythonanywhere.com/">About</a>
+        </div>
+        <!-- Copyright -->
+    
+    </footer>
+
+    <!-- Optional JavaScript -->    
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+{% load static %}
+
+
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+    <title>FunType</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="padding:20px">
+        <a class="navbar-brand">
+            <img src="{% static 'home/logo1.PNG' %}" alt="logo" id="logo">
+        </a>
+
+        <a class="navbar-brand" id="name">FunType</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="l_opt">
+                <div class="navbar-nav">
+                    {% block navbar %}
+
+                    {% endblock %}
+                </div>
+            </div>
+                
+            <div class="r_opt">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link" href="{% url 'funtype:login'%}" id="login">Login</a>
+                    <a class="nav-item nav-link" href="{% url 'funtype:signup'%}" id="signup">SignUp</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    {% block body_content %}
+
+    {% endblock %}
+</body>
+                
+</html>

@@ -1,0 +1,37 @@
+{% extends 'accounts/layout.html'%}
+{% load crispy_forms_tags %}
+
+{% load static %}
+
+{% block form %}
+
+<div id="signup_form">
+
+    {% if error %}
+    <div class="alert alert-danger" role="alert">
+        {{ error }}
+    </div>
+    {% endif %}
+    
+    <div style="margin-bottom:10px; text-align: center; font-size: 32px; ">
+        Sign up to save your scores
+    </div>
+    <!--img src="{% static 'accounts/signup_img.PNG' %}" id="signup_img" width="370px" height="250px" align="right" style="margin-top:70px; margin-right:30px;"-->
+
+    <form  method="POST" class="form-group">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <!--input name="username" type="text" placeholder="Username" style="height:45px; width:400px; margin:30px; margin-bottom:5px; margin-top:40px; padding:10px;">
+        <input name="email" type="email" placeholder="Email address" style="height:45px; width:400px; margin:30px; margin-bottom:5px; margin-top:5px; padding:10px;">
+        <div style="margin:30px; margin-top:5px; margin-bottom:25px;">
+            <input name="password1" type="password" placeholder="Password" style="height:45px; width:180px; padding:10px;"><input name="password2" type="password" placeholder="Confirm Password" style="height:45px; width:180px; margin-left:40px; padding:10px;">
+            <p style="font-family:sans-serif; font-size:16px; margin-top:5px;">&nbsp;Use 8 or more characters with a mix of letters, numbers<br>&nbsp;& symbols</p>
+        </div-->
+        <button type="submit" class="btn btn-primary">Signup</button>
+    </form>
+    <a style="color:white;" href="{% url 'accounts:loginuser' %}"><button type="submit" class="btn btn-secondary">Already have an
+            account?</button></a>
+
+</div>
+
+{% endblock %}
